@@ -1,5 +1,8 @@
-
 export default async function handler(req, res) {
+  if (req.url === "/test") {
+    return res.status(200).send("✅ Proxy is working");
+  }
+
   const url = "https://api.fireworks.ai" + req.url;
 
   const response = await fetch(url, {
